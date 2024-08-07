@@ -12,6 +12,7 @@ const actor = document.querySelector('#actor')
 const country = document.querySelector('#country')
 
 const defaultMovie = 'iron man'
+const apiKey = 'YOUR_API_KEY'
 
 function updateUI(data){
     movieName.innerHTML = data.Title
@@ -28,7 +29,7 @@ function updateUI(data){
 }
 
 function fetchMovie(MName) {
-    fetch(`https://www.omdbapi.com/?t=${MName}&apikey=a9cc1d1d`)
+    fetch(`https://www.omdbapi.com/?t=${MName}&apikey=${apiKey}`)
         .then(res => {
             if (!res.ok) throw new Error('Movie not found');
             return res.json();
